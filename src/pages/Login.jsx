@@ -1,13 +1,30 @@
-import { Form } from "../components/Form";
-import { SideBar } from "../components/Navbar";
-import { Table } from "../components/Table";
+import Init from "../components/Init"
+import Profile from "../components/Profile"
+import OutInit from "../components/OutInit"
+import { useAuth0 } from "@auth0/auth0-react";
 
-export function Login() {
+
+
+
+function Login() {
+  const {isAuthenticated} = useAuth0();
+
+  
+
   return (
-    <>
-      <div className="bg-gradient-to-b from-gray-900 to-gray-600 bg-gradient-to-r">
-        <Form />
+    <div className="flex justify-center text-3xl leading-tight">
+      <div className="flex flex-col items-center">
+        <h1>Welcome</h1>
+        <Profile/>
+        <div className="flex gap-20 justify-between">
+          {
+            isAuthenticated ? <OutInit/> : <Init />
+          }
+        </div>
+
       </div>
-    </>
+    </div>
   );
 }
+
+export default Login
