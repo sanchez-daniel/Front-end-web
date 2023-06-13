@@ -7,7 +7,7 @@ export function Form() {
       <div className="w-full h-screen ">
         <div>
           <img
-            src="../img/LOGO_UNAC_BLANCO.png"
+            src="https://cdn.pixabay.com/photo/2023/06/07/18/14/giraffes-8047856_1280.jpg"
             alt="Mi imagen"
             className="w-32 h-auto "
           />
